@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="css/top.css" >
+  <title>Kanasami</title>
+  <script>
+    function changeTwitterWidgetDesign(){
+      var $twitter_widget = $('iframe.twitter-timeline');
+      var $twitter_widget_contents = $twitter_widget.contents();
+
+      if ($twitter_widget.length > 0 && $twitter_widget[0].contentWindow.document.body.innerHTML !== ""){
+        $twitter_widget_contents.find('head').append('<link href="css/top.css" rel="stylesheet" type="text/css">');
+      }
+      else {
+        setTimeout(function(){
+          changeTwitterWidgetDesign();
+        }, 350);
+      }
+    }
+
+    changeTwitterWidgetDesign();
+ </script>
+ </head>
+ <body>
+   <div id="fb-root">
+
+   <!-- ヘッダー画像 -->
+   <img src="./images/head_side.png">
+   <div class="head_char">
+     <img src="./images/charHead.png">
+   </div>
+   <div class="head_character">
+     <img src="./images/character.png">
+   </div>
+ </div>
+   <!-- リンクの表 -->
+   <ul id="item-list">
+     <!-- ホーム -->
+     <li><a href="#"><img src="./images/home.png"></a></li>
+     <!-- プロフィール -->
+     <li><a href="#"><img src="./images/profile.png"></a></li>
+     <!-- スケジュール -->
+     <li><a href="#"><img src="./images/schedule.png"></a></li>
+     <!--  ディスコグラフィー -->
+     <li><a href="#"><img src="./images/disc.png"></a></li>
+     <!-- ブログ -->
+     <li><a href="https://ameblo.jp/kanaasami/"><img src="./images/blog.png"></a></li>
+     <!-- ムービー -->
+     <li><a href="https://www.youtube.com/channel/UCE6RKPQjvt1vZmpAkZ9Igjw"><img src="./images/movie.png"></a></li>
+     <!-- コンタクト -->
+     <li><a href="#"><img src="./images/contact.png"></a></li>
+   </ul>
+
+   <h1 class="ribbon">
+     <span class="ribbon-content">今日の Kanasami</span>
+   </h1>
+
+  <!-- twiter -->
+   <div class="twitter">
+     <script>
+      window.twttr = (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0],
+        t = window.twttr || {};
+        if (d.getElementById(id)) return t;
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "https://platform.twitter.com/widgets.js";
+        fjs.parentNode.insertBefore(js, fjs);
+
+        t._e = [];
+        t.ready = function(f) {
+          t._e.push(f);
+        };
+
+        return t;
+      }(document, "script", "twitter-wjs"));</script>
+
+    <script>
+      (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) return;
+        js = d.createElement(s); js.id = id;
+        js.src = "//connect.facebook.net/ja_JP/sdk.js#xfbml=1&version=v2.10";
+        fjs.parentNode.insertBefore(js, fjs);
+      }(document, 'script', 'facebook-jssdk'));</script>
+
+      <a class="twitter-timeline"
+        href="https://twitter.com/asami_kana"
+        data-width="500px"
+        data-height="600px"
+        data-chrome="nofooter">
+        @TwitterDevによるツイート
+      </a>
+    </div>
+
+    <br />
+
+    <div class="shake">
+      <img src="./images/peamanman.png" />
+    </div>
+
+    <footer>
+      <hr>
+      <p>Copyright Kanasami</p>
+    </footer>
+
+ </body>
+</html>
